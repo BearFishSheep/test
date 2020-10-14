@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+    int n,i;
+    long int a;
+    while(scanf("%d",&n)!=EOF)
+    {
+        for(i=1;i<=n;i++)
+        {
+            scanf("%ld",&a);
+            printf("6");
+            printf("%ld\n",a%1e5);
+        }
+    }
+    return 0;
+}

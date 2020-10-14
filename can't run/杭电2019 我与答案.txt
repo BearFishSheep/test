@@ -1,0 +1,86 @@
+#include <stdio.h>
+int insertdata(int a[],int n,int data);
+int main()
+{
+    int n,m,t,i,a[102];
+    while(scanf("%d%d",&n,&m)!=EOF)
+    {
+        if(n==0&&m==0) break;
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        t=insertdata(a,n,m);
+        for(i=0;i<t;i++)
+        {
+            if(i<t)
+                printf("%d",a[i]);
+            if(i<t-1)
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+int insertdata(int a[],int n,int data)
+{
+    int i,j;
+    for(i=0;i<n;i++)
+    {
+        if(data<a[0])
+        {
+            for(j=n-1;j>=0;j--)
+            {
+                a[j+1]=a[j];
+            }
+            a[0]=data;
+            n++;
+        }
+        if(data>a[n-1])
+        {
+            a[n]=data;
+            n++;
+        }
+        if(data>a[i]&&data<a[i+1])
+        {
+            for(j=n-1;j>i;j--)
+            {
+                a[j+1]=a[j];
+            }
+            a[i+1]=data;
+            n++;
+        }
+    }
+    return n;
+}
+
+//ÕýÈ·
+#include<stdio.h>
+int main() 
+{   
+ int i,j,k,m,n;    
+while(scanf("%d %d",&n,&m),n!=0||m!=0)
+ {       
+ int a[120];       
+ for(i=0; i<n; i++)          
+  scanf("%d",&a[i]);        
+a[n]=m;        
+for(j=n-1; j>=0; j--)
+ {           
+ if(a[j]>a[j+1])
+ {                
+k=a[j];               
+ a[j]=a[j+1];              
+  a[j+1]=k;          
+  }
+ else    break;       
+ }       
+ for(i=0; i<=n; i++) {          
+  if(i==0)              
+  printf("%d",a[i]);            
+else              
+  printf(" %d",a[i]);       
+ }        
+printf("\n");    }   
+ return 0;
+}

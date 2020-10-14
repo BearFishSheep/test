@@ -1,0 +1,6 @@
+f = open("D:\\72.txt", 'r')
+line = f.readline()
+f.close()
+f = open("D:\\72.txt", 'w')
+f.write(line.swapcase())
+f.close()

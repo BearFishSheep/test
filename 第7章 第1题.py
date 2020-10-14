@@ -1,0 +1,6 @@
+f = open("D:\\71.txt", 'w')
+line = input("请输入一个文件的内容：")
+f.write(line)
+a = input("请输入一个需要统计的字符：")
+print(line.count(a))
+f.close()

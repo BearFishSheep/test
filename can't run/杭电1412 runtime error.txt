@@ -1,0 +1,53 @@
+#include <stdio.h>
+int deldata(int a[],int r)
+{
+    int i,j,k=0;
+    for(i=0;i<r;i++)
+    {
+        for(j=i+1;j<r&&a[j]-a[i];j++);
+        if(!(j-r))
+        {
+            a[k]=a[i];
+            k++;
+        }
+    }
+    return k;
+}
+int main()
+{
+    int n,m,a[20002],i,j,t,z;
+    while(scanf("%d %d",&n,&m)!=EOF)
+    {
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        for(j=n;j<m+n;j++)
+        {
+            scanf("%d",&a[j]);
+        }
+        t=deldata(a,m+n);
+        z=t;
+        while(t>1)
+        {
+            for(i=0;i<t-1;i++)
+            {
+                if(a[i]>a[i+1])
+                {
+                    t=a[i];
+                    a[i]=a[i+1];
+                    a[i+1]=t;
+                }
+            }
+            t--;
+        }
+        for(i=0;i<z;i++)
+        {
+            printf("%d",a[i]);
+            if(i<z-1)
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}

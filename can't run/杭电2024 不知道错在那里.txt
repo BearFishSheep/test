@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[100];
+    int i,k,n,j,cnt;
+    while(scanf("%d",&n)!=EOF)
+    {
+        getchar();
+        for(i=1;i<=n;i++)
+        {
+            gets(s);
+            k=strlen(s);
+            cnt=0;
+            if((s[0]>='a'&&s[j]<='z')||(s[0]>='A'&&s[0]<='Z')||s[0]=='_')
+            {
+                for(j=1;j<k;j++)
+                {
+                    if(s[j]==32)
+                        printf("no\n");
+                    if((s[j]>='0'&&s[j]<='9')||(s[j]>='a'&&s[j]<='z')||(s[j]>='A'&&s[j]<='Z')||s[j]=='_')
+                    {
+                        cnt++;
+                    }
+                }
+                if(cnt==k-1)
+                    printf("yes\n");
+            }
+            else printf("no\n");
+        }
+    }
+    return 0;
+}

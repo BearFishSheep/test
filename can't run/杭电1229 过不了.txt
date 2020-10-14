@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int a,b,k;
+    int x,y;
+    while(scanf("%d %d %d",&a,&b,&k)!=EOF)
+    {
+        x=a%(int)pow(10,k);
+        y=b%(int)pow(10,k);
+        if(a==0&&b==0) break;
+        if(x==y)
+            printf("-1\n");
+        else
+            printf("%d\n",a+b);
+    }
+    return 0;
+}

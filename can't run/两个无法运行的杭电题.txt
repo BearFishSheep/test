@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int year,month,day,sum;
+    printf("year/month/day:");
+    while(scanf("%d/%d/%d",&year,&month,&day)!=EOF)
+    {
+        if((year%4==0)&&(year%100!=0)||(year%400==0))
+            for()
+    }
+    return 0;
+}
+

@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    __int64 a[1005];
+    int sum[1005];
+    int t,i,n;
+    a[1]=1,sum[1]=1;
+    for(i=2;i<=1000;i++)
+    {
+        a[i]=a[i-1]*i;
+    }
+    for(i=2;i<=1000;i++)
+    {
+        sum[i]=sum[i-1]+a[i];
+    }
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d",&n);
+        if(sum[n]<10)
+            printf("00000%d\n",sum[n]);
+        else if(sum[n]<100)
+            printf("0000%d\n",sum[n]);
+        else if(sum[n]<1000)
+            printf("000%d\n",sum[n]);
+        else if(sum[n]<10000)
+            printf("00%d\n",sum[n]);
+        else if(sum[n]<100000)
+            printf("0%d\n",sum[n]);
+        else
+            printf("%d",sum[n]%1000000);
+    }
+    return 0;
+}
+
